@@ -10,6 +10,13 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  css: {
+    preprocessorOptions: {
+        scss: {
+            additionalData: "@import './src/assets/bem.scss';"
+        }
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

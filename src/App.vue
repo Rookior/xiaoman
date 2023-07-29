@@ -9,7 +9,18 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
+      <div>
+        <!-- bms -->
+        <div class="xm-wraps">   
+          <div>
+            <p>小满</p>
+          </div>
+          <div class="xm-wraps__right">
+             <div>header</div>
+             <div>content</div>
+          </div>
+        </div>
+      </div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -20,6 +31,30 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
+
+<style lang="scss" scoped>
+
+@mixin flex {
+    display: flex;
+}
+@mixin bfc {
+    height: 100%;
+    overflow: hidden;
+}
+@include b('wraps') {
+  width: 200px;
+  background: #ccc;
+  color: #f00;
+  @include bfc;
+  @include flex;
+  @include e(right){
+        background: pink;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+  }
+}
+</style>
 <style scoped>
 header {
   line-height: 1.5;
